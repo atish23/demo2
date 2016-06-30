@@ -11,6 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">LaundryApp</a>
+                <%= link_to "Order Now", new_order_path,class: 'btn btn-primary' %>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,7 +30,21 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                    <% if customer_signed_in? %>
+                      <%= link_to 'Edit profile', edit_customer_registration_path, :class => 'page-scroll' %>
+                  </li>
+                  <li>
+                    <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'page-scroll'  %>
+                  </li>
+                      
+                    <% else %>
+                      <li>
+                        <%= link_to "Sign up", new_customer_registration_path, :class => 'page-scroll'  %> 
+                      </li>
+                      
+                      <li>
+                      <%= link_to "Login", new_customer_session_path, :class => 'page-scroll'  %>
+                    <% end %>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -627,3 +642,6 @@
     </div>
   </div>
 </div>
+
+
+
