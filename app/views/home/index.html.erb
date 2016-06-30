@@ -30,12 +30,18 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+
+
                     <% if customer_signed_in? %>
-                      <%= link_to 'Edit profile', edit_customer_registration_path, :class => 'page-scroll' %>
-                  </li>
-                  <li>
-                    <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'page-scroll'  %>
-                  </li>
+                     <li>
+                        <%= link_to "My Profile",user_path(current_customer),class: "page-scroll"%>
+                    </li>
+                    
+                     <li>
+                        <%= link_to "Logout", destroy_customer_session_path, method: :delete, :class => 'page-scroll'  %>
+                      </li>
                       
                     <% else %>
                       <li>
@@ -44,11 +50,10 @@
                       
                       <li>
                       <%= link_to "Login", new_customer_session_path, :class => 'page-scroll'  %>
+                      </li>
                     <% end %>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
