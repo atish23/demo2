@@ -1,26 +1,20 @@
-<h2>Log in</h2>
+<head>
+   <link href="/assets/common.css" rel="stylesheet"> 
+</head>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+ <%= render 'shared/navigation2'%>
+<!-- multistep form -->
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: 'msform'}) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <fieldset>
+        <h2 class="fs-title">Log in</h2>
+        <%= f.email_field :email, autofocus: true, placeholder: "Email"  %>
+        <%= f.password_field :password, autocomplete: "off" , placeholder: 'Password'%>
+<!--       <input type="button" name="signup" class="signup action-button" value="Sign Up" />
+ -->      <%= link_to "Sign Up",new_customer_registration_path, class: "action-button"%>
+ <%= f.submit "Log in",class: 'action-button' %>
+    </fieldset>
+<%end%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   devise_for :customers
 
   root 'home#index'
@@ -13,9 +16,9 @@ Rails.application.routes.draw do
 
   namespace :api do
 
-    resources :search
+      resources :search
 
-    resources :orders
+      resources :orders
   end
 
 end

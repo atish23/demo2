@@ -77,7 +77,6 @@ $(".previous").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
-
 $(".submit").click(function(){
 	var fname = $('#fname').val();
 	var lname = $('#lname').val();
@@ -91,7 +90,6 @@ $(".submit").click(function(){
 	var iron = $('#region_id1').val();
 	var wash = $('#region_id2').val();
 	var customer = $('#customer').val();
-	alert(customer);
 	var object = { 
 								order: 
 									{ 'firstname': fname,
@@ -113,7 +111,7 @@ $(".submit").click(function(){
 		url:"/api/orders",
 		data: object,
 		success:function(data){
-			alert(data);
+			window.location.href = '/'
 		}
 	});
 	$('#msform').trigger("reset");
@@ -133,7 +131,7 @@ function myFunction(e) {
 		async: false,
 		success:function(response){
 			if (response) {
-				alert("yeah!!!")
+				$( "#orderNow" ).append("<a class='page-scroll btn btn-primary' href='/orders/new'>Order Now</a>");
 			} else {
 				$('#myModal').modal('show');
 			}

@@ -11,7 +11,5 @@ class UsersController < ApplicationController
 	def orders
 		@customers = Customer.find(params[:id])
 		@orders = @customers.orders
-		#raise @orders.inspect
 	end
-
 end
