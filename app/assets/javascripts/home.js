@@ -96,7 +96,6 @@ $(".submit").click(function(event){
                                 { 'firstname': fname,
                                     'lastname': lname,
                                     'phone': phone,
-                                    'email': email,
                                     'address1' :address1,
                                     'address2' :address2,
                                     'city' : city,

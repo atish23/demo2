@@ -1,0 +1,408 @@
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Men</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.washandiron == true && pricing.category == 'Men'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                              <h2>Women</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.washandiron == true && pricing.category == 'Women'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                              <h2>Kids</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.washandiron == true && pricing.category == 'Kids'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                              <h2>Other Household Clothes</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.washandiron == true && pricing.category == 'HouseholdClothes'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Terms And Use</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            
+                            <p>
+
+                                        <h6>1. AGREEMENT</h6>
+
+                                        Dear Customer,
+                                        Thanks for using KwikIron, a mobile/web application developed by NCube Technologies .(The "Company"). The following terms and conditions (these "Terms of Use") govern your access to, and use of, the KwikIron mobile/web application, including any services, content, and functionality offered on or through the KwikIron mobile/web application (The "App"). Please read the following Terms of Use carefully before using the App(mobile/web).
+
+                                        You understand that by using the App(mobile/web), you are accepting and agreeing to these Terms of Use and our Privacy Policy. Please do not use the App(mobile/web) if you do not agree with these Terms of Use. We reserve the right to change these Terms of Use at any time in our sole discretion and without notice. All changes are effective immediately when we post them. Your continued use of the App(mobile/web) after we have posted changes to these Terms of Use means that you agree to be bound and abide by the changes, so please check the Terms of Use regularly for any changes.
+
+                                        <h6>1.1 USER AGREEMENT.</h6>
+
+                                        In order to access the Service, you will be required to register for a KwikIron account (an "Account"). You may register for an Account by allowing us to access your name, email address, phone number and other  profile information You agree to: (a) provide true, accurate, current and complete information about yourself when registering for an Account, including any credit card information (your "Credit Card") as applicable; (b) maintain and promptly update your Account to keep it true, accurate, current and complete; (c) review the pricing (accessible at http://www.kwikiron.in)(the "Pricing") to be charged for Your use of the Services; and (d) authorize KwikIron and its affiliates to charge on cash on delivery basis. If you provide any information that is untrue, inaccurate, not current or incomplete, or KwikIron has reasonable grounds to suspect that such information is untrue, inaccurate, not current or incomplete, KwikIron has the right to suspend or terminate your Account and refuse any and all current or future use of the services (or any portion thereof).
+
+                                        <h6>1.2 USER REPRESENTATIONS.</h6>
+
+                                        You represent and warrant to KwikIron that you will (a) maintain the security of your user identification, password and other confidential information relating to your Account; (b) maintain the security, confidentiality and integrity of all messages and the content that you receive, transmit through or store on the Service; (c) maintain all charges resulting from the use of your Account, including but not limited to, unauthorized use of your Account prior to you notifying KwikIron in writing of such use and taking steps to prevent its further occurrence by changing your password; (d) comply with the Terms set forth herein; and (e) comply with all applicable laws subject to Nagpur Jurisdiction
+
+                                        You further represent and warrant that (i) you are over the age of Eighteen (18) and have the power, authority or consent to enter into and perform your obligations under the Agreement; (ii) all information provided by you to KwikIron, including Credit Card/Debit card(if applicable) information, is truthful, accurate and complete; (iii) you are authorized, or have the permission of the authorized signatory of the Credit Card/debit card(if applicable) or charge card provided to KwikIron, to pay any Fees incurred from use of the Services; (iv) you shall comply with all terms and conditions of this Agreement; (v) you have provided and will provide accurate and complete registration information, including, without limitation, your legal name, address and telephone number; and (vi) each time you upload Submitted Content (as defined herein) on the Site or through the Service, you own or otherwise control the rights or have the necessary consents to upload or post such Submitted Content and to enable inclusion and use of the Submitted Content in the manner contemplated by the Site.
+
+                                        <h6>1.3 USER'S RESTRICTIONS.</h6>
+
+                                        You are not permitted, directly or indirectly, to (i) engage in any acts inconsistent with the principles of copyright protection and fair use without obtaining the express written consent of KwikIron and/or the copyright owner; or (ii) distribute, display rent, lease, transfer or otherwise transfer rights to, or in any way exploit, the Content or any Submitted Content, in whole or in part; or (iii) remove any proprietary notices or labels on the Content or any Submitted Content.
+
+                                        <h6>1.4 WAIVER AND RELEASE.</h6>
+
+                                        You agree that neither KwikIron nor its officers, directors, employees, agents, licensors or suppliers shall have any liability to you under any theory of liability or indemnity in connection with your use of the site, the app, the service, or the content. You specifically acknowledge that KwikIron shall not be liable for submitted content or the defamatory, offensive, or illegal conduct of any third party and that the risk of harm or damage from the foregoing rests entirely with you. You hereby release and forever waive any and all claims you may have against KwikIron, its officers, directors, employees, agents, licensors or suppliers (including but not limited to claims based upon the negligence of KwikIron, its officers, directors, employees, agents, licensors or suppliers) for losses or damages you sustain in connection with your use of the site, the app, the service, or the content.
+
+                                       <h6>1.5 LIABILITY LIMITATION.</h6>
+
+                                        Notwithstanding the foregoing paragraph KwikIron will not be liable under any theory of law, for any indirect, incidental, punitive or consequential damages, including, but not limited to, loss of profits, business interruption, loss of information or data or costs of replacement goods, arising out of the use or inability to use the site, the app or resulting from use of or reliance on the information presented, even if KwikIron may have been advised of the possibility of such damages. The site and the app are controlled and offered by KwikIron from its facilities in Nagpur India. KwikIron makes no representations that the site is appropriate or available for use in other locations. Those who access or use the site or app from other jurisdictions do so at their own volition and are responsible for compliance with local law.
+
+                                        <h6>2. MANAGING YOUR ITEMS DURING OUR CARE</h6>
+
+                                        <h6>2.1 DAMAGED ITEMS.</h6>
+
+                                        Taking care of your garments is our number one priority and we strive to provide exceptional service. While we treat all garments with extreme care, we cannot guarantee against colour loss, bleeding or shrinkage of garments. In addition, we will not be responsible for any deteriorated or flawed garments, which could result in small holes or tears. For any items deemed damaged, KwikIron may reimburse you by paying up to ten (10) times the charge for cleaning the item regardless of brand, price or condition of the garment. As we can only compensate or reimburse you through bank transfer, we do not provide you other refund services such as buying alternative items. Therefore, it is essential that you email us your bank account number, as well as your proof of purchase receipt to care@KwikIron.in. Any damaged items must be reported to care@KwikIron.in within two (2) days upon delivery and inspected by KwikIron through digital photos or in-person.
+
+                                        2.2 LOST ITEMS.
+
+                                        Please check and confirm the number of the items at the time of delivery of the garments. Any lost item must be reported immediately to our worker or care@KwikIron.in. All claims are reviewed on a case-by-case basis. Items are considered lost fourteen (14) days after the initial claim has been made. Any reimbursement for a dry-cleaned item deemed lost by KwikIron, , shall be limited to ten (10) times the charge for treating the garment. Any wash and fold item deemed lost shall be evaluated on a case-by-case basis, but in any case reimbursement for lost wash and fold, ironed item shall not exceed five (5) times the price of the actual service cost to treat the clothes. KwikIron shall not take responsibility for any loose items lost when submitted in a KwikIron bag, jewellery, or cufflinks.
+
+                                        2.3 COMPENSATION
+
+                                        Compensation will only be made in the form of a bank transfer made by the company, the amount of which is limited to ten (10) times the charge for treating the garment..
+
+                                        2.4 LOSS DUE TO FIRE OR ANY DAMAGE FOR WHICH WE ACCEPT LIABILITY
+
+                                        In the event of loss by fire, any other loss or damage to article for which we may accept liability, without prejudice, such liability SHALL NOT EXCEED ten (10) times the rates charged for cleaning the article, provided that the claim is made within twenty-four (24) hours after receiving the article and the original  invoice/contract must be presented.
+
+                                        2.5 LOOSE ITEMS
+
+                                        Although we try our best to track such items, we are not responsible for loose items such as jewellery, watches, cash, detachable buttons, cufflinks, etc. We request that customers empty pockets prior to leaving items with us as we cannot be held responsible for damage to your garments from items left in pockets (Lipstick, Gum, Pens, etc.).
+
+                                        2.6 UNCLAIMED ORDERS
+
+                                        Articles unclaimed within one (1) month from the date of the bill shall be donated to charity. We may attempt to contact you in order to remind and notify you that your property is being scheduled for donation, but we do not guarantee that this will be done, nor that our attempts to contact you will be successful.
+
+                                        2.7  curtain release
+
+                                        Curtains frequently develop tender areas while hanging as a result of heat, sunlight, humidity and air pollution. Consequently, despite utmost care exercised in our cleaning process, holes or tears in the fabric may occur. Faded areas may not be apparent because of doll converge. Progressive shrinkage may occur because of the inherent nature of the fabric or because it was not completely preshrunk. For these reasons, we accept your curtains for cleaning subject to your no-fault agreement.
+
+                                        By place curtain cleaning order with KwikIron, you have read the above and agree to holdKwikIron blameless in event any of the following conditions become evident or occur in cleaning my curtains: sun fade, color loss due to non-fast colors, holes or tears due to fabric degradation, shrinkage.
+
+                                        3. CHANGES TO YOUR ORDER
+
+                                        3.1 CHANGING AN ORDER
+
+                                        You may make a change to an order four hours before the collection time set out in our acceptance of your order by calling our Customer Care Helpline.
+
+                                        3.2 ORDER TO BE CHANGED BY KWIKIRON
+
+                                        With your consent and at our discretion, We may make a change to your order as an alternative to cancelling it in the circumstances below:
+
+                                        3.2.1 Time Window.
+
+                                        We will come between 7am to 12 noon during our confirmed time window , so kindly ensure that you are available for the pick-up and/or drop-off appointment within the time window. If we tried to pick-up and/or drop off within the time window but failed, that is because we cannot get in touch with you with reasonable attempts, or you are not available during such time window. We reserve the right to change the status of your appointment to "pick-up failed" or "drop-off failed", and hence you may need to re-schedule your pick-up or drop-off to another available time slot. We are also not obliged to meet the time window following a failed pick-up or a drop-off, except in some cases, where we will scrutinise them on a case by case basis.
+
+                                        4. CANCELLING YOUR ORDER
+
+                                        4.1 TIME PERIOD
+
+                                        You may cancel your order at any time up to four (4) hours before the collection time set out in our confirmation of acceptance of your order via the App. Any rescheduling of orders will need to be confirmed by calling our service centre or drop us an email at care@KwikIronApp.com;
+
+                                        4.2 RIGHTS OF CANCELLATION
+
+                                        You acknowledge that once an Item has been collected from you, we have begun to provide the Services to you and that any rights of cancellation you may have under the any regulations or equivalent law will be lost.
+
+                                        4.3 CHARGES FOR CANCELLATION
+
+                                        If you have agreed and confirmed to the pricing and service terms (via phone call, SMS, Whatsapp, email, KwikIron App or our online order system) but decide to cancel your order(s) within four (4) hours before the start of the time window (e.g., if your order was scheduled at 7am-12noon, but you decide to cancel your order at around 6am), KwikIron reserves the right to charge you RS 25 to cover the operation cost. After we have collected your Item(s), if you would like to cancel the order, we reserve the right to charge you RS 25 per single trip for a normal order , and impose a surcharge of up to 20% of the total order value for bulky items such as curtains, carpets, etc.
+
+                                        5. PRICE AND PAYMENT
+
+                                        5.1 PRICE LIST
+
+                                        The price of the services are set out in our price list available in the App or at www.KwikIron.in, and will be the price in force at the time you place your order. Our prices may change at any time, but price changes will not affect payments made for orders that we have confirmed.
+
+                                        5.2 PAYMENT
+
+                                        Payment is due when we have completed the Services. Even if we cannot deliver the item(s) to you due to your liability, we will obtain payment for our services rendered to you in cash. If for any reason we are unable to obtain our payment, you will become liable to us for the sum due plus interest at the rate of 3% a year above the local base lending rate from time to time. Interest will accrue on a daily basis from the due date until payment is made. You must pay us interest together with any overdue amount.
+
+                                        6. OUR LIABILITY TO YOU
+
+                                        6.1 OUR RESPONSIBILITY
+
+                                        Subject to the following sub-paragraphs, we will be responsible for any loss or damage that you may suffer as a result of our breach of these Terms or due to our negligence.
+
+                                        6.2 UNFORSEEABLE DAMAGE
+
+                                        We will not be responsible for any loss or damage that is not foreseeable. Loss or damage is considered foreseeable if it is an obvious consequence of our breach.
+
+                                        6.3 PRIVATE USE
+
+                                        We only supply our services for domestic and private use. You agree not to use the services for any commercial, business or re-sale purpose, and we have no liability to you for any loss of profit, loss of business, business interruption, or loss of business opportunity.
+
+                                        6.4 NOT WITHIN OUR RESPONSIBILITY
+
+                                        We will not be responsible for any loss or damage (including, without limitation) any colour loss, shrinkage or other damage, resulting from the following:
+
+                                        6.4.1 failure to notify us of any special requirements or instructions for cleaning the Item; 6.4.2 the fact that the Item has no label indicating cleaning instructions; 6.4.3 any existing damage to the Item at the time of collection; 6.4.4 any extraneous or hazardous thing left in or on the Item, e.g., pins, jewellery, coins, pens, buttons or embellishments, etc.; 6.5 OUR LIABILITY
+
+                                        Our total liability to you in respect of each Item is limited to ten (10) times the charge for treating the garment.
+
+                                        6.6 HIGH VALUE ITEMS
+
+                                        You are obliged to inform us if any laundry item is of a high value so that special attention can be given to that item. Extra charges will apply for the washing or ironing  of such items.
+
+                                        6.7 STAIN REMOVAL
+
+                                        Stains can be removed upon customer request and will be done at his/her risk, with additional charges, but total removal of stains is not guaranteed.
+
+                                        7. TURNAROUND TIME
+
+                                        7.1 SERVICE DAYS AND TURNAROUND TIME
+
+                                        Service days and turnaround time vary by order. KwikIron will make its best effort to adhere to our service schedule, however, we do not guarantee turnaround times and assume no responsibility for any damages that may occur due to a delay in service.
+
+                                        7.2 MULTIPLE LOCATIONS
+
+                                        As long as the order meets the minimum 25 clothes, we are able to pick up from one location and drop off your order at a different location. However, the order has to be delivered or picked up from ONLY one location. NO multiple locations for dropping off or picking up orders..
+
+                                        8. PAYMENT OR DEPOSIT
+
+                                        By registering with KwikIron and providing debit or credit card information (if applicable).
+
+                                        9. TERMINATION
+
+                                        9.1 TERMINATION BY US
+
+                                        In our sole and absolute discretion, we may with immediate effect upon giving you notice, terminate your use of the Platform and/or Services and/or disable your Username and Password. We may bar access to the Platform and/or Services (or any part thereof) for any reason whatsoever, including a breach of any of these Terms of Conditions or where if we believe that you have violated or acted inconsistently with any terms or conditions set out herein, or if in our opinion or the opinion of any regulatory authority, it is not suitable to continue providing the services relating to the Platform.
+
+                                        9.2 TERMINATION BY YOU
+
+                                        You may terminate these Terms of Conditions by giving seven days’ notice in writing to us. Upon receipt of your termination notice, we will regard your notice as a formal request to us to close your Customer Account and the account closure process shall be in accordance with the provisions set out in this Terms of Conditions.
+
+                                        10. NOTICES
+
+                                        10.1 NOTICES FROM US
+
+                                        All notices or other communications given to you if:
+                                        communicated through any print or electronic media as we may select will be deemed to be notified to you on the date of publication or broadcast; or sent by post or left at your last known address will be deemed to be received by you on the day following such posting or on the day when it was so left.
+
+                                        10.2 NOTICES FROM YOU
+
+                                        You may only give us notice(s) in writing sent to our designated address or e-mail address, and we shall be deemed to have received such notice only upon receipt. While we endeavour to respond promptly to notices from you, we cannot guarantee that we will always respond with consistent speed.
+
+                                        10.3 OTHER MODES
+
+                                        We may from time to time designate other acceptable modes of giving notices (including but not limited to e-mail or other forms of electronic communication) and the time or event by which such notice shall be deemed given.
+
+                                        11. YOUR SUBMISSIONS AND INFORMATION
+
+                                        11.1 SUBMISSIONS BY YOU
+
+                                        You grant us a non-exclusive license to use the materials or information that you submit to the Platform and/or provide to us, including but not limited to, questions, reviews, comments, and suggestions (collectively, “Submissions”). When you post comments or reviews to the Platform, you also grant us the right to use the name that you submit or your Username in connection with such review, comment, or other content. You shall not use a false e-mail address, pretend to be someone other than yourself or otherwise mislead us or third parties as to the origin of any Submissions. We may, but shall not be obligated to, publish, remove or edit your Submissions.
+
+                                        11.2 CONSENT TO RECEIVE NOTIFICATIONS VIA E-MAILS, PHONE-CALLS, SMS, SOCIAL NETWORKS, PUSH NOTIFICATION, IN-APP NOTIFICATION, AND COMMUNICATION APPS.
+
+                                        You consent to and authorize the use by us of any information provided by you (including Personal Data) for the purposes of sending informational and promotional notifications to you by all communications channels stated above. You may subsequently opt out of receiving promotional e-mails by clicking on the appropriate hyperlink in any promotional e-mail and you can opt out of receiving promotional calls/SMS/Fax by contacting our customer support or by registering your India registered telephone numbers with the Do Not Disturb (DND) Registry for free. To opt out of receiving any promotional or informational notifications at any of the above mentioned communication channels please contact our customer support via Phone or E-mail.
+
+                                        11.3 PRIVACY POLICY
+
+                                        You acknowledge that you have read and agree to the Privacy Policy and consent to our collection, use and disclosure of your Personal Data for the purposes as set out in the Privacy Policy.
+
+                                        13. REFUND POLICY
+
+                                        In the event of any kind of refund or withdrawal request, KwikIron reserves the right to revoke all the rewarded offerings, which have been granted to you either by KwikIron or by KwikIron’s partners in terms of, included but not limited to, KwikIron Voucher, KwikIron credits and other   </p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Men</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+
+                                        <% if pricing.iron == true && pricing.category == 'Men' %>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                              <h2>Women</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.iron == true && pricing.category == 'Women'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                              <h2>Kids</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.iron == true && pricing.category == 'Kids'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                              <h2>Other Household Clothes</h2>
+                              <table id="comparetable" class="table table-striped">
+                               <tr>
+                                <td class="blank"> </td>
+                                    <th>Iron</th>
+                                    </tr>
+                                    
+                                    <% @pricing.each do |pricing|%>
+                                        <% if pricing.iron == true && pricing.category == 'HouseholdClothes'%>
+                                            <tr>
+                                            <td ><%= pricing.name%></td>    
+
+                                            <td>INR <%= pricing.price%> Rs</td>
+                                            </tr>
+                                        <%end%>
+                                    <%end%>    
+                              </table>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body" id="modal-body">
+        
+      </div>
+    </div>
+  </div>
+</div>
+

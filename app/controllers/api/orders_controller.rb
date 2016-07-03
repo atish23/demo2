@@ -1,4 +1,4 @@
-class Api::OrdersController < ApplicationController
+class Api::OrdersController < Api::BaseController
 	def index
 		@orders = Order.all
 		respond_to do |format|
