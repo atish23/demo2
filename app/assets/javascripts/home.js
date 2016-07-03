@@ -127,7 +127,7 @@ $(".submit").click(function(event){
 });
 
 function myFunction(e) {
-	e.preventDefault();
+	// e.preventDefault();
 
     var search_term = $("#k").val();
     	$.ajax({
@@ -137,13 +137,13 @@ function myFunction(e) {
 		async: false,
 		success:function(response){
 			if (response) {
-				alert
 				$('#myModalLabel').empty();
 				$('#modal-body').empty();
-				$('#search').trigger("reset");
+				
 				$('#myModalLabel').append("Available!!");
 				$('#modal-body').append("Your area is covered under free Pickup & Delievery Services! Click on Order Now");
 				$('#myModal').modal('show');
+				$('#search').trigger("reset");
 				// $( "#orderNow" ).append("<a class='page-scroll btn btn-primary' href='/orders/new'>Order Now</a>");
 			} else {
 				$('#myModalLabel').empty();

@@ -5,11 +5,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		 @customers = Customer.find(params[:id])	
+		 @customers = Customer.find(params[:id])
+		 @orders = @customers.orders
 	end
 
-	def orders
-		@customers = Customer.find(params[:id])
-		# @orders = @customers.orders
-	end
 end

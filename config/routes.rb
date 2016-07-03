@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   devise_for :customers
@@ -10,13 +11,11 @@ Rails.application.routes.draw do
 
   resources :orders
 
-  resources :users	do
-  	get 'orders', on: :member
-  end
+  resources :users, only: [:show, :index]
 
   namespace :api do
 
-      resources :search
+      resources :search, only: [:show]
 
       resources :orders
   end
