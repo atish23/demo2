@@ -6,6 +6,6 @@ class Order < ActiveRecord::Base
 	validates :phone, :presence => true
 	validates :pickup_date, :presence => true
 	validates :address1, :presence => true
-	validates :city, :presence => true
+	# validates :city, :presence => true
 	validates :zipcode, :presence => true
 end

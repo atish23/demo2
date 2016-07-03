@@ -1,3 +1,18 @@
+ <head>
+     <style type="text/css">
+         /* START COMPARISON TABLE STYLES */
+#comparetable {width: 100%; table-layout: fixed; text-align: center; margin: 4em 0; border-collapse: collapse; }
+#comparetable tr {background: transparent!important;}
+#comparetable td,
+#comparetable th {padding: 20px; text-align: center;}
+#comparetable td.rowTitle {text-align: left;}
+.blank {background: none!important; border: none!important;}
+ .goldleaf th {background-color: #ffe34b; font-size: 22px; color: #746200; text-align: center; font-weight: 400; text-shadow: 0 1px 0 #eee2a2; border: 1px solid #ae9a2e;}
+ .goldleaf td {background-color: #f0f1f1; border: 1px solid #c8d6e2;}
+  .goldleaf td.rowTitle {font-size: 20px; border-left: 3px solid #ae9a2e;}
+/* END COMPARISON TABLE STYLES */
+     </style>
+ </head>
  <div id="page-top" class="index">
  <%= render 'shared/navigation'%>
 
@@ -260,16 +275,48 @@
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <!-- <img class="img-responsive img-centered" src="/assets/portfolio/roundicons-free.png" alt=""> -->
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
+                              <table id="comparetable" class="goldleaf">
+                               <tr>
+                                <td class="blank"> </td>
+                                                          <th>Iron</th>
+                                                         </tr>
+                                                        <tr>
+                                    <td class="rowTitle">Shirts/T-Shirt/Kurta/WaistCoat/Vest</td>    
+                                          
+                                                                      <td>INR 7.50 Rs</td>
+                                                                    </tr>
+                                                           <tr>
+                                    <td class="rowTitle">Jeans/ Trouser/ Pyjama/ Track Pant/ Shorts </td>    
+                                          
+                                                                      <td>INR 7.50 Rs</td>
+                                                                    </tr>
+                                                           <tr>
+                                    <td class="rowTitle">Sweater/ Pullover/ Sweatshirt/ Shawl </td>    
+                                          
+                                                                      <td>INR 12.50 Rs</td>
+                                                                    </tr>
+                                                           <tr>
+                                    <td class="rowTitle">Blazer/ Jacket </td>    
+                                          
+                                                                      <td>INR 45.00 Rs</td>
+                                                                    </tr>
+                                                           <tr>
+                                    <td class="rowTitle">Suit (2 pc)/ Safari Suit </td>    
+                                          
+                                                                      <td>INR 55.00 Rs</td>
+                                                                    </tr>
+                                                           <tr>
+                                    <td class="rowTitle">Suit (3 pc) </td>    
+                                          
+                                                                      <td>INR 65.00 Rs</td>
+                                                                    </tr>
+                                                           <tr>
+                                    <td class="rowTitle">Turban/ Dhoti/ Tie/ Cap </td>    
+                                          
+                                                                      <td>INR 7.50 Rs</td>
+                                                                    </tr>
+                                               
+                              </table>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>

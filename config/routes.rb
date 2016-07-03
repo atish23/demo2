@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :search, only: [:show]
 
       resources :orders
+      resources :sessions, :only => [:create, :destroy]
   end
 
 end

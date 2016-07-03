@@ -114,6 +114,7 @@ $(".submit").click(function(event){
                 cache: false,
                 success: function() {
                     //clear all fields
+                    alert("hello")
                     $('#msform').trigger("reset");
                     window.location.href = '/'
                 },
