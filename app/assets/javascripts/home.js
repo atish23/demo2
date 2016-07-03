@@ -77,53 +77,59 @@ $(".previous").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
-$(".submit").click(function(){
-	var fname = $('#fname').val();
-	var lname = $('#lname').val();
-	var phone = $('#phone').val();
-	var email = $('#email').val();
-	var address1 = $('#address1').val();
-	var address2 = $('#address2').val();
-	var city = $('#city').val();
-	var zip = $('#zip').val();
-	var date = $('#example1').val();
-	var iron = $('#region_id1').val();
-	var wash = $('#region_id2').val();
-	var customer = $('#customer').val();
-	var object = { 
-								order: 
-									{ 'firstname': fname,
-								 		'lastname': lname,
-								 		'phone': phone,
-								 		'email': email,
-								 		'address1' :address1,
-								 		'address2' :address2,
-								 		'city' : city,
-								 		'zipcode' : zip,
-								 		'pickup_date': date,
-								 		'iron' : iron,
-								 		'wash_iron' : wash,
-								 		'customer_id' : customer
-								 		} 
-								 	}
-	$.ajax({
-		type: "POST",
-		url:"/api/orders",
-		data: object,
-		success:function(data){
-			window.location.href = '/'
-		}
-	});
-	$('#msform').trigger("reset");
-	return false;
-})
+$(".submit").click(function(event){
+	        event.preventDefault(); // prevent default submit behaviour
+            var fname = $('#fname').val();
+            var lname = $('#lname').val();
+            var phone = $('#phone').val();
+            var email = $('#email').val();
+            var address1 = $('#address1').val();
+            var address2 = $('#address2').val();
+            var city = $('#city').val();
+            var zip = $('#zip').val();
+            var date = $('#example1').val();
+            var iron = $('#region_id1').val();
+            var wash = $('#region_id2').val();
+            var customer = $('#customer').val();
+            var object = { 
+                            order: 
+                                { 'firstname': fname,
+                                    'lastname': lname,
+                                    'phone': phone,
+                                    'email': email,
+                                    'address1' :address1,
+                                    'address2' :address2,
+                                    'city' : city,
+                                    'zipcode' : zip,
+                                    'pickup_date': date,
+                                    'iron' : iron,
+                                    'wash_iron' : wash,
+                                    'customer_id' : customer
+                                    } 
+                                }
+            $.ajax({
+                type: "POST",
+                url:"/api/orders",
+                data: object,
+                cache: false,
+                success: function() {
+                    //clear all fields
+                    $('#msform').trigger("reset");
+                    window.location.href = '/'
+                },
+                error: function() {
+                    $('#msform').trigger("reset");
+                    $('#myModal').modal('show');
+                },
 
-
+		})
+	})
 });
 
 function myFunction(e) {
 	e.preventDefault();
-    var search_term = $("#k").val(); 
+
+    var search_term = $("#k").val();
     	$.ajax({
 		url:"/api/search/"+search_term,
 		contentType:"application/json",
@@ -131,8 +137,20 @@ function myFunction(e) {
 		async: false,
 		success:function(response){
 			if (response) {
-				$( "#orderNow" ).append("<a class='page-scroll btn btn-primary' href='/orders/new'>Order Now</a>");
+				alert
+				$('#myModalLabel').empty();
+				$('#modal-body').empty();
+				$('#search').trigger("reset");
+				$('#myModalLabel').append("Available!!");
+				$('#modal-body').append("Your area is covered under free Pickup & Delievery Services! Click on Order Now");
+				$('#myModal').modal('show');
+				// $( "#orderNow" ).append("<a class='page-scroll btn btn-primary' href='/orders/new'>Order Now</a>");
 			} else {
+				$('#myModalLabel').empty();
+				$('#modal-body').empty();
+				$('#search').trigger("reset");
+				$('#myModalLabel').append("Sorry!")
+				$('#modal-body').append("Currently we are not Available in this Area. For more details Call Us @ 7276012266");
 				$('#myModal').modal('show');
 			}
 		}

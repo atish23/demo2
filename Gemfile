@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem 'devise'
 gem 'rails_admin'
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'byebug'

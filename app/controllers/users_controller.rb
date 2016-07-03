@@ -10,6 +10,6 @@ class UsersController < ApplicationController
 
 	def orders
 		@customers = Customer.find(params[:id])
-		@orders = @customers.orders
+		# @orders = @customers.orders
 	end
 end
