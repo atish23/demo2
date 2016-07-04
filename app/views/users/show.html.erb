@@ -1,54 +1,88 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-4 col-md-4 user-details">
-<!--             <div class="user-image">
-                <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" alt="Karan Singh Sisodia" title="Karan Singh Sisodia" class="img-circle">
-            </div> -->
-            <div class="user-info-block">
-                <div class="user-heading">
-                    <h3>Karan Singh Sisodia</h3>
-                    <span class="help-block">Chandigarh, IN</span>
-                </div>
-                <ul class="navigation">
-                    <li class="active">
-                        <a data-toggle="tab" href="#information">
-                            <span class="fa fa-user"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#settings">
-                            <span class="fa fa-cog"></span>
-                        </a>
-                    </li>
-<!--                     <li>
-                        <a data-toggle="tab" href="#email">
-                            <span class="fa fa-envelope"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#events">
-                            <span class="fa fa-calendar"></span>
-                        </a>
-                    </li> -->
-                </ul>
-                <div class="user-body">
-                    <div class="tab-content">
-                        <div id="information" class="tab-pane active">
-                            <h4>Account Information</h4>
-                        </div>
-                        <div id="settings" class="tab-pane">
-                            <h4>My Orders</h4>
-                            
-                        </div>
-<!--                         <div id="email" class="tab-pane">
-                            <h4>Send Message</h4>
-                        </div>
-                        <div id="events" class="tab-pane">
-                            <h4>Events</h4>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
+<div class="col-lg-6 col-sm-6">
+    <div class="card hovercard">
+        <div class="card-background">
+            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
+            <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
-	</div>
-</div>
+        <div class="useravatar">
+            <img alt="" src="http://lorempixel.com/100/100/people/9/">
+        </div>
+        <div class="card-info"> <span class="card-title">Pamela Anderson</span>
+
+        </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="fa fa-star" aria-hidden="true"></span>
+                <div class="hidden-xs">Edit Profile</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="fa fa-heart" aria-hidden="true"></span>
+                <div class="hidden-xs">My Orders</div>
+            </button>
+        </div>
+        <!--<div class="btn-group" role="group">-->
+        <!--    <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="fa fa-user" aria-hidden="true"></span>-->
+        <!--        <div class="hidden-xs">Following</div>-->
+        <!--    </button>-->
+        <!--</div>-->
+    </div>
+
+        <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+<%= form_for("customer", as: current_customer, url: registration_path(current_customer), html: { method: :put }) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+            <h2>Recent Orders</h2>
+            <table id="comparetable" class="table table-striped">
+                <tr>
+                    <th>Order Id</th>
+                    <th>PickUp Date</th>
+                    <th>Status</th>
+                </tr>
+                
+                <tr>
+                <% @orders.each do |order|%>
+                    <td ><%= order.id%></td>    
+                
+                    <td><%= order.pickup_date%></td>
+                    <td>In Progress</td>
+                <%end%>
+                </tr>
+            </table>
+        </div>
+        <!--<div class="tab-pane fade in" id="tab3">-->
+        <!--  <h3>This is tab 3</h3>-->
+        <!--</div>-->
+      </div>
+    </div>
+    
+    </div>

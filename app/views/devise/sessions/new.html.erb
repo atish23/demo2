@@ -6,8 +6,10 @@
         <h2 class="fs-title">Log in</h2>
         <%= f.email_field :email, autofocus: true, placeholder: "Email"  %>
         <%= f.password_field :password, autocomplete: "off" , placeholder: 'Password'%>
-<!--       <input type="button" name="signup" class="signup action-button" value="Sign Up" />
- -->      <%= link_to "Sign Up",new_customer_registration_path, class: "action-button"%>
+          <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+          <%= link_to "Sign Up",new_customer_registration_path, class: "action-button"%>
+   <br />
+
  <%= f.submit "Log in",class: 'action-button' %>
     </fieldset>
 <%end%>
