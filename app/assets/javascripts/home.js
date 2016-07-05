@@ -140,14 +140,17 @@ function saveOrder(e){
                                 { 'firstname': fname,
                                     'lastname': lname,
                                     'phone': phone,
-                                    'address1' :address1,
-                                    'address2' :address2,
-                                    'city' : city,
-                                    'zipcode' : zip,
                                     'pickup_date': date,
                                     'iron' : iron,
                                     'wash_iron' : wash,
-                                    'customer_id' : customer
+                                    'customer_id' : customer,
+                                    'address_attributes': {
+		                                    'address1' :address1,
+		                                    'address2' :address2,
+		                                    'city' : city,
+		                                    'zipcode' : zip
+                						}
+
                                     } 
                                 }
             $.ajax({

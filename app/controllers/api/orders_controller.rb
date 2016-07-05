@@ -10,7 +10,7 @@ class Api::OrdersController < Api::BaseController
 		respond_to do |format|
 			if @order.save
 				flash[:success] = "Order successfully submitted"
-				format.json { render json: @order, status: :created, location: @order}
+				format.json { render json: @order, status: :created}
 			end
 		end
 	end
