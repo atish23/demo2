@@ -80,18 +80,16 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'kwikiron.herokuapp.com' }
   Rails.application.routes.default_url_options[:host] = 'kwikiron.herokuapp.com'
   
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
-  
-  config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: ENV["GMAIL_DOMAIN"],
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
-  }
+config.action_mailer.raise_delivery_errors = true 
+config.action_mailer.delivery_method = :smtp 
+config.action_mailer.perform_deliveries = true 
+config.action_mailer.smtp_settings = { 
+:address => "smtp.sendgrid.net", 
+:port => 587, # ports 587 and 2525 are also supported with STARTTLS 
+:enable_starttls_auto => true, # detects and uses STARTTLS
+ :user_name => "blonkar@delaplex.in", 
+ :password => "Blonkar@88", # SMTP password is any valid API key 
+ :authentication => 'plain', # Mandrill supports 'plain' or 'login' 
+ :domain => 'sendgrid.net' }
+end
 end

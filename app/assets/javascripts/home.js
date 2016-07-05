@@ -4,10 +4,37 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
+var current_date = new Date();
 $('#example1').datepicker({
-    format: "dd/mm/yyyy"
+    format: "dd/mm/yyyy",
+	startDate: current_date
 });
-
+var val = $('#msform').validate({
+    onkeyup: false,
+    errorClass: "req_mess",
+    ignore: ":hidden",
+    rules: {
+        phone: {
+            required: true,
+            minlength: 10,
+            phoneUS: true
+        },
+        zip: {
+        	required: true,
+        	minlength: 6,
+        	number: true
+        }
+    },
+    messages: {
+        phone: {
+            required: "Please enter your phone number",
+            phoneUS: "Please enter a valid phone number: (e.g. 19999999999 or 9999999999)"
+        },
+        zip: {
+        	number: "Please enter valid zip code"
+        }
+    }
+});
 $(".btn-pref .btn").click(function () {
     $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
     // $(".tab").addClass("active"); // instead of this do the below 
@@ -15,6 +42,7 @@ $(".btn-pref .btn").click(function () {
 });
 
 $(".next").click(function(){
+if($("#msform").valid()){
 	if(animating) return false;
 	animating = true;
 	
@@ -47,7 +75,9 @@ $(".next").click(function(){
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
+}
 });
+
 
 $(".previous").click(function(){
 	if(animating) return false;
@@ -83,8 +113,16 @@ $(".previous").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
+
 $(".submit").click(function(event){
-	        event.preventDefault(); // prevent default submit behaviour
+	if($("#msform").valid()){
+		saveOrder(event);
+	}
+	
+});
+
+function saveOrder(e){
+		    e.preventDefault(); // prevent default submit behaviour
             var fname = $('#fname').val();
             var lname = $('#lname').val();
             var phone = $('#phone').val();
@@ -119,7 +157,6 @@ $(".submit").click(function(event){
                 cache: false,
                 success: function() {
                     //clear all fields
-                    alert("hello")
                     $('#msform').trigger("reset");
                     window.location.href = '/'
                 },
@@ -129,9 +166,8 @@ $(".submit").click(function(event){
                 },
 
 		})
-	})
+	}
 });
-
 function myFunction(e) {
 	// e.preventDefault();
 

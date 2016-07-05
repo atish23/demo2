@@ -3,7 +3,8 @@
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, id: 'msform' }) do |f| %>
   <fieldset>
-    <h2>Forgot your password?</h2>
+    <h5>Forgot your password?</h5>
+      <%= devise_error_messages! %>
     <%= f.email_field :email, autofocus: true,placeholder: "Email" %>
 
     <%= f.submit "Send me reset password instructions" ,class: 'action-button' %>
