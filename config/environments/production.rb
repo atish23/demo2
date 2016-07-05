@@ -90,6 +90,7 @@ config.action_mailer.smtp_settings = {
  :user_name => "blonkar@delaplex.in", 
  :password => "Blonkar@88", # SMTP password is any valid API key 
  :authentication => 'plain', # Mandrill supports 'plain' or 'login' 
- :domain => 'sendgrid.net' }
-end
+ :domain => 'sendgrid.net' 
+}
+
 end
