@@ -8,7 +8,8 @@
         <%= f.email_field :email, autofocus: true, placeholder: "Email"  %>
         <%= f.password_field :password, autocomplete: "off" , placeholder: 'Password'%>
           <%= link_to "Forgot your password?", new_password_path(resource_name) %><br>
-          <%= link_to "Sign Up",new_customer_registration_path, class: "action-button"%>
+
+          <input type="button" onclick="location.href='/customers/sign_up';" value="Sign Up"  class="action-button" />
             <%= f.submit "Log in",class: 'action-button' %>
     </fieldset>
 <%end%>

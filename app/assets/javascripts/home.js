@@ -7,7 +7,8 @@ var animating; //flag to prevent quick multi-click glitches
 var current_date = new Date();
 $('#example1').datepicker({
     format: "dd/mm/yyyy",
-	startDate: current_date
+	startDate: current_date,
+	autoclose:true
 });
 var val = $('#msform').validate({
     onkeyup: false,

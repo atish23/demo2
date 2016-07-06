@@ -7,7 +7,8 @@
         <%= f.email_field :email, autofocus: true, placeholder: "Email"  %>
         <%= f.password_field :password, autocomplete: "off" , placeholder: 'Password'%>
         <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
-        <%= link_to "Log In",new_customer_session_path, class: "action-button"%>
+
+        <input type="button" onclick="location.href='/customers/sign_in';" value="Log In"  class="action-button" />
         <%= f.submit "Sign Up",class: 'action-button' %>
     </fieldset>
 <%end%>
