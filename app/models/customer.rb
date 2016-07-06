@@ -5,7 +5,7 @@ class Customer < ActiveRecord::Base
   before_create :generate_authentication_token!
   has_many :orders
 
-  validates :auth_token, uniqueness: true
+  # validates :auth_token, uniqueness: true
 
 
 
