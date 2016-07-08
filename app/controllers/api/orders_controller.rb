@@ -9,8 +9,9 @@ class Api::OrdersController < Api::BaseController
 		@order = Order.new(order_params)
 		respond_to do |format|
 			if @order.save
-				flash[:success] = "Order successfully submitted"
-				format.json { render json: @order, status: :created}
+				format.json { render json: true, status: :created}
+			else
+				format.json { render json: false, status: :false}
 			end
 		end
 	end

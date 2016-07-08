@@ -4,12 +4,14 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
+//Bootstrap Datepicker in Order form
 var current_date = new Date();
 $('#example1').datepicker({
     format: "dd/mm/yyyy",
 	startDate: current_date,
 	autoclose:true
 });
+
 var val = $('#msform').validate({
     onkeyup: false,
     errorClass: "req_mess",
@@ -29,7 +31,7 @@ var val = $('#msform').validate({
     messages: {
         phone: {
             required: "Please enter your phone number",
-            phoneUS: "Please enter a valid phone number: (e.g. 19999999999 or 9999999999)"
+            phoneUS: "Please enter a valid phone number: (e.g. 8888888888 or 9999999999)"
         },
         zip: {
         	number: "Please enter valid zip code"
@@ -160,8 +162,9 @@ function saveOrder(e){
                 data: object,
                 cache: false,
                 success: function() {
-                    //clear all fields
+                    // //clear all fields
                     $('#msform').trigger("reset");
+                	toastr.success('Order Place Succesfully!')
                     window.location.href = '/'
                 },
                 error: function() {
@@ -173,8 +176,6 @@ function saveOrder(e){
 	}
 });
 function myFunction(e) {
-	// e.preventDefault();
-
     var search_term = $("#k").val();
     	$.ajax({
 		url:"/api/search/"+search_term,

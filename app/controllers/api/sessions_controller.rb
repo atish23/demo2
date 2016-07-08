@@ -20,8 +20,12 @@ class Api::SessionsController < Api::BaseController
 
 	def destroy
 	    user = Customer.find_by(auth_token: params[:id])
-	    user.generate_authentication_token!
-	    user.save
-	    head 204
+			if user
+				user.generate_authentication_token!
+				user.save
+				render json: {success: "success"}, status: 200
+			else
+				render json: {failure: "failure"}, status: 422
+			end
 	end
 end
