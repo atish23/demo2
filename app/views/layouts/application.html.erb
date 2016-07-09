@@ -11,20 +11,20 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'> -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <!-- Bootstrap Core CSS -->
     <link href="/assets/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="/assets/agency.min.css" rel="stylesheet">
+    <link href="/assets/agency.css" rel="stylesheet">
     <link href="/assets/style.css" rel="stylesheet">
     <link href="/assets/common.css" rel="stylesheet"> 
     <link href="/assets/bootstrap-datepicker.css" rel="stylesheet"> 
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body >
+<body>
 
 <%= yield %>
 
@@ -43,7 +43,9 @@
 
 
 <!-- Theme JavaScript -->
+
 <script src="/assets/agency.js" type="text/javascript"></script>
+<script src="/assets/home.js" type="text/javascript"></script>
 
   <% unless flash.empty? %>
     <script type="text/javascript">

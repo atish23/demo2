@@ -147,6 +147,7 @@ function saveOrder(e){
                                     'iron' : iron,
                                     'wash_iron' : wash,
                                     'customer_id' : customer,
+                                    'status': 'In Progress',
                                     'address_attributes': {
 		                                    'address1' :address1,
 		                                    'address2' :address2,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708113633) do
+ActiveRecord::Schema.define(version: 20160709121345) do
 
   create_table "addresses", force: :cascade do |t|
     t.text     "address1"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160708113633) do
     t.string   "iron"
     t.string   "wash_iron"
     t.integer  "customer_id"
+    t.string   "status"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"

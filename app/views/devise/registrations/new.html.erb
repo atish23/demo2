@@ -1,4 +1,5 @@
 <%= render 'shared/navigation2'%>
+<body style="background-color:#777777;">
 <!-- multistep form -->
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'msform'}) do |f| %>
     <fieldset>
@@ -12,3 +13,4 @@
         <%= f.submit "Sign Up",class: 'action-button' %>
     </fieldset>
 <%end%>
+</body>

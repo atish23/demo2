@@ -1,5 +1,6 @@
 <%= render 'shared/navigation2'%>
 <!-- multistep form -->
+<body style="background-color:#777777;">
 <form id="msform">
     <input  type="hidden" value = "<%=current_customer.id%>" data-id = "<%=current_customer.id%>" id="customer">
     <fieldset>
@@ -48,6 +49,5 @@
         <input type="submit" name="submit" class="submit action-button" value="Submit" />
     </fieldset>
 </form>
+</body>
 
-
-<script src="/assets/home.js" type="text/javascript"></script>

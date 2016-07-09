@@ -9,4 +9,7 @@ class Order < ActiveRecord::Base
 	# validates :address1, :presence => true
 	# # validates :city, :presence => true
 	# validates :zipcode, :presence => true
+	def status_enum
+   	[['In Progress'],['Pending'],['Completed']]
+	end
 end
