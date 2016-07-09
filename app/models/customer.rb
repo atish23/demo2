@@ -4,7 +4,7 @@ class Customer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   before_create :generate_authentication_token!
   has_many :orders
-
+  has_one :address
   # validates :auth_token, uniqueness: true
 
 

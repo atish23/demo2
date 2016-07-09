@@ -39,10 +39,18 @@
     <fieldset>
         <h2 class="fs-title">Address & Confirmation</h2>
         <h3 class="fs-subtitle">Step 3</h3>
-        <textarea name="address" id="address1" placeholder="Street Address 1" required></textarea>
-        <textarea name="address" id="address2" placeholder="Street Address 2"></textarea>
+        <textarea name="address1" id="address1" placeholder="Street Address 1" required>
+        <%if @address%>
+            <%= @address.address1%>
+        <%end%>
+        </textarea>
+        <textarea name="address2" id="address2" placeholder="Street Address 2">
+        <%if @address%>
+            <%= @address.address2%>
+        <%end%>
+        </textarea>
         <!-- <div class="col-md-6"><input type="text" name="city" id="city" placeholder="City" /></div> -->
-        <input type="text" name="zip" id="zip" placeholder="ZipCode" required />
+        <input type="text" name="zip" id="zip" placeholder="ZipCode" required value="<%if @address%><%= @address.zipcode%><%end%>" />
 
         <h4>Confirmation*</h4>
         <input type="button" name="previous" class="previous action-button" value="Previous" />

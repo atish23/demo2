@@ -17,6 +17,22 @@ var val = $('#msform').validate({
     errorClass: "req_mess",
     ignore: ":hidden",
     rules: {
+    	fname: {
+    		required: true,
+    		maxlength: 25,
+    		nowhitespace: true
+    	},
+    	lname: {
+    		required: true,
+    		maxlength: 25,
+    		nowhitespace: true
+    	},
+    	address1: {
+    		maxlength: 75
+    	},
+    	address2: {
+    		maxlength: 75
+    	},
         phone: {
             required: true,
             minlength: 10,
@@ -164,9 +180,12 @@ function saveOrder(e){
                 cache: false,
                 success: function() {
                     // //clear all fields
-                    $('#msform').trigger("reset");
+                    //$('#msform').trigger("reset");
                 	toastr.success('Order Place Succesfully!')
-                    window.location.href = '/'
+                	window.setTimeout(function(){
+                 		window.location.href = '/'  
+                  }, 1000);
+                    
                 },
                 error: function() {
                     $('#msform').trigger("reset");
@@ -203,4 +222,60 @@ function myFunction(e) {
 			}
 		}
 	});
+}
+function emailUpdate(e) {
+	e.preventDefault();
+	var id = $("#customer").attr("data-id");
+	var email = $("#exampleInputEmail1").val();
+	var object = 	{
+					    user:
+					    { 
+					        "email": email
+					    }
+					}
+            $.ajax({
+                type: "PUT",
+                url:"/api/registrations/"+id,
+                data: object,
+                cache: false,
+                success: function() {
+                	$('#customer_name').html(email);
+                	toastr.success('Email Updated Succesfully!')
+                },
+                error: function() {
+                	toastr.success('Unable to Update Email!')
+                },
+
+		})
+}
+
+function addressUpdate(e) {
+	e.preventDefault();
+	var id = $("#customer").attr("data-id");
+	var address1= $("#exampleInputAddress").val();
+	var address2= $("#exampleInputAddress2").val();
+	var zipcode = $("#zipcode").val();
+	var object = {
+				    address:
+				    { 
+				        "address1": address1,
+				        "address2": address2,
+				        "zipcode": zipcode,
+				        "customer_id": id
+				    }
+	}
+
+			$.ajax({
+				type: "PUT",
+				url: "/api/addresses/"+id,
+				data: object,
+				cache: false,
+				success: function() {
+					toastr.success("Address Updated Succesfully")
+				},
+				error: function() {
+					toastr.success('Unable to Update address!')
+				}
+
+			})
 }

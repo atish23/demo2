@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
       resources :orders
       resources :sessions, :only => [:create, :destroy]
-      resources :registrations, :only => [:create]
+      resources :registrations, :only => [:create,:update]
+      resources :addresses, :only => [:update]
   end
 
 end
