@@ -1,4 +1,4 @@
-# POST https://laundry-atish23.c9users.io/api/orders
+# piPOST https://laundry-atish23.c9users.io/api/orders
 # {
 #  "order": 
 #     { "firstname": "Atish",
@@ -21,8 +21,8 @@
 
 
 #  POST https://laundry-atish23.c9users.io/api/sessions
-#     { 
-#         "email": "test@test.com",
-#         "password": "12345678"
-#     }
+    # { 
+    #     "email": "test@test.com",
+    #     "password": "12345678"
+    # }
 # DELETE https://laundry-atish23.c9users.io/api/sessions/y1dbPxp3Gbphs2ekKVU4 this id is generated while login i.e. auth_token
