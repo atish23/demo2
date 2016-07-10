@@ -42,6 +42,12 @@ var val = $('#msform').validate({
         	required: true,
         	minlength: 6,
         	number: true
+        },
+        region1: {
+        	require_from_group: [1, ".fields"]
+        },
+        region2: {
+        	require_from_group: [1, ".fields"]
         }
     },
     messages: {
@@ -243,7 +249,7 @@ function emailUpdate(e) {
                 	toastr.success('Email Updated Succesfully!')
                 },
                 error: function() {
-                	toastr.success('Unable to Update Email!')
+                	toastr.error('Unable to Update Email!')
                 },
 
 		})
@@ -274,7 +280,7 @@ function addressUpdate(e) {
 					toastr.success("Address Updated Succesfully")
 				},
 				error: function() {
-					toastr.success('Unable to Update address!')
+					toastr.error('Unable to Update address!')
 				}
 
 			})
