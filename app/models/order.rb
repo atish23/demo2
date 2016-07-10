@@ -10,6 +10,6 @@ class Order < ActiveRecord::Base
 	# # validates :city, :presence => true
 	# validates :zipcode, :presence => true
 	def status_enum
-   	[['In Progress'],['Pending'],['Completed']]
+   	[['In Progress'],['Cancelled'],['Completed']]
 	end
 end
