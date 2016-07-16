@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :sessions, :only => [:create, :destroy]
       resources :registrations, :only => [:create,:update]
       resources :addresses, :only => [:update]
+      resources :pricings, :only => [:index]
   end
 
 end
