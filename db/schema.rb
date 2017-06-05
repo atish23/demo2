@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708113633) do
+ActiveRecord::Schema.define(version: 20160709203124) do
 
   create_table "addresses", force: :cascade do |t|
     t.text     "address1"
     t.text     "address2"
     t.string   "zipcode"
     t.string   "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "order_id"
+    t.integer  "customer_id"
   end
+
+  add_index "addresses", ["customer_id"], name: "index_addresses_on_customer_id"
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160708113633) do
     t.string   "iron"
     t.string   "wash_iron"
     t.integer  "customer_id"
+    t.string   "status"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"

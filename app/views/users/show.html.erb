@@ -1,16 +1,158 @@
-      <body>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<style type="text/css">
+   /*profile page css*/
+.wid{
+    width: 100%!important;
+}
+.tb_b{
+    min-height: 540px;
+    background-color: #f5f5f5;
+}
+.nav_t  > li.active > a, .nav_t > li.active > a:hover, .nav_t > li.active > a:focus {
+    background-color: #fed136!important;
+    color:white!important;
+    border-color: #fed136!important;
+}
+.nav_t  > li > a {
+    background-color: #fff!important;
+    color:#333333!important;
+    border-color: #fff!important;
+}
+.padd_top{
+    padding-top: 40px;
+}
+#main-wrap{
+  padding:0px!important;
+}
+.bg_img{
+  background-image: url('/assets/img_01.png');
+  background-repeat: no-repeat;
+    background-size: cover;
+    height: 280px;
+   
+}
+.profile_img{
+   background-color: #fff;
+    color: #fff;
+    border-radius: 100%;
+    border: 7px solid #DFD0BC;
+    text-align: center;
+    margin-top: 25px;
+}
+.par{
+  background-color: rgba(255, 255, 255, 0.20);
+
+    
+    position: absolute;
+    width: 300px;
+    left: 425px;
+    margin-top: 10px;
+  }
+  .par p{
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 3px;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .par{
+  background-color: rgba(255, 255, 255, 0.20);
+
+    
+    position: absolute;
+    width: 300px;
+    left: 330px;
+    margin-top: 10px;
+  }
+  .par p{
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 3px;
+  }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .par{
+  background-color: rgba(255, 255, 255, 0.20);
+
+    
+    position: absolute;
+    width: 300px;
+    left: 200px;
+    margin-top: 10px;
+  }
+  .par p{
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 3px;
+  }
+  }
+  @media only screen and (min-width: 530px) and (max-width: 767px) {
+    .par{
+  background-color: rgba(255, 255, 255, 0.20);
+
+    
+    position: absolute;
+    width: 300px;
+    left: 0px;
+    margin-top: 10px;
+  }
+  .par p{
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 3px;
+  }
+  }
+  @media only screen and (min-width: 481px) and (max-width: 530px) {
+    .par{
+  background-color: rgba(255, 255, 255, 0.20);
+
+    
+    position: absolute;
+    width: 300px;
+    left: 0px;
+    margin-top: 10px;
+  }
+  .par p{
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 3px;
+  }
+  }
+  @media (max-width: 480px) {
+    .par{
+  background-color: rgba(255, 255, 255, 0.20);
+
+    
+    position: absolute;
+    width: 300px;
+    left: 0px;
+    margin-top: 10px;
+  }
+  .par p{
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 3px;
+  }
+  }
+  }
+</style>
+<%= render 'shared/navigation2'%>
+<br>  
+<br>
+<br>
+<body style="background-color:#777777;">
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	      <div class="row">
 	         <div class="container bg_img">
 		         <div class="col-lg-offset-5 col-lg-2 col-md-offset-5 col-md-2 col-sm-offset-4 col-sm-3  col-xs-4">
 		         	<div class="profile_img">
-		                <img class="img-circle img-responsive" src="assets/team/1.jpg" alt="">
+		                <img class="img-circle img-responsive" src="/assets/img_user.jpg" alt="">
 		            </div>
 		         </div>
 		         <div class="clearfix"></div>
 		         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		         	<div class="text-center par">
-		         		<p>Pamela Anderson</p>
+		         	<div class="text-center ">
+		         		<p id="customer_name"><%= current_customer.email%></p>
 		         	</div>
 		         </div>
 	         </div>
@@ -43,17 +185,28 @@
                   <div class="tab-content">
                      <div role="tabpanel" class="tab-pane tb_b active" id="home">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padd_top">
-                           <form>
+                           <form id="updateEmail">
                               <div class="form-group">
+                                  <input  type="hidden" value = "<%=current_customer.id%>" data-id = "<%=current_customer.id%>" id="customer">
                                  <label for="exampleInputEmail1">Email address</label>
-                                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="<%= current_customer.email%>">
                               </div>
-                             
+                             <button type="update" class="btn btn-primary" onclick="emailUpdate(event)">Update</button>
+                             </form>
+                             <br/>
+                             <form id="updateAddress">
                               <div class="form-group">
-                                 <label for="exampleInputAddress">Address</label>
-                                 <input type="password" class="form-control" id="exampleInputAddress" placeholder="Address">
+                                 <label for="exampleInputAddress">Address1</label>
+                                 <textarea class="form-control" id="exampleInputAddress" placeholder="Address1" ><% if  @address%><%= @address.address1%><%end%></textarea>
                               </div>
                               <div class="form-group">
+                                 <label for="exampleInputAddress2">Address2</label>
+                                 <textarea class="form-control" id="exampleInputAddress2" placeholder="Address2"><% if  @address%><%= @address.address2%><%end%></textarea>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="ZipCode" value="<% if  @address%><%=@address.zipcode%><%end%>" />
+                              </div>
+<!--                               <div class="form-group">
                                  <div class="radio">
                                     <label>
                                       <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -66,9 +219,9 @@
                                       Address 2
                                     </label>
                                   </div>
-                              </div>
-                              <button type="submit" class="btn btn-primary">Submit</button>
-                              <button type="submit" class="btn btn-primary">Add Address</button>
+                              </div> -->
+                              
+                              <button type="submit" class="btn btn-primary" onclick="addressUpdate(event)">Add Address</button>
                            </form>
                         </div>
                      </div>
@@ -84,6 +237,13 @@
                               </thead>
                               <tbody>
                               <!-- Here you can add rows -->
+                              <% @orders.each do |order|%>
+                              <tr>              
+                                 <td><%= order.id%></td>
+                                 <td><%= order.pickup_date.to_time.strftime('%B %e , %Y') %></td>
+                                 <td><%= order.status%></td>
+                              </tr>
+                              <%end%>
                               </tbody>
                            </table>
                         </div>
@@ -94,4 +254,10 @@
             </div>
          </div>
       </section>
-      </body>
+
+
+         <script>
+      $(document).ready(function () {
+       $('#tabs').tab();
+      });
+      </script>

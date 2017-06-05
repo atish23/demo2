@@ -7,7 +7,12 @@ class UsersController < ApplicationController
 	def show
 		 @customer = Customer.new
 		 @customers = Customer.find(params[:id])
-		 @orders = @customers.orders
+		 @orders = @customers.orders.last(10).reverse
+		 @order= current_customer.orders.last
+		if @order
+			@address = current_customer.orders.last.address
+
+		end
 	end
 
 end
